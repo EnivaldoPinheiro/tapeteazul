@@ -1,0 +1,273 @@
+ class Passageiro
+    {
+        private string Nome;
+        private string Cpf;
+        private string Email;
+        private string Endereco;
+        private int Contato;
+       
+        public Passageiro(string nome, string cpf, string email, string end, int celular)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+            Endereco = end;
+            Contato = celular;                   
+        }
+        public Passageiro() { }
+        public void setNome(string nome)
+        {
+            Nome = nome;
+        }
+        public string getNome()
+        {
+            return Nome;
+        }
+        public void setCpf(string cpf) 
+        {
+            Cpf = cpf;
+        }
+        public string getCpf()
+        {
+            return Cpf;
+        }
+        public void setEmail(string email)
+        {
+            Email = email;
+        }
+        public string getEmail()
+        {
+            return Email;
+        }
+        public void setEndereco(string end)
+        {
+            Endereco = end;
+        }
+        public string getEndereco()
+        {
+            return Endereco;
+              
+        }
+        public void setContato(int celular)
+        {
+            Contato = celular;
+        }
+        public int getContato()
+        {
+            return Contato;
+        }
+    }
+     class Passagem : Passageiro
+    {
+        private static string Fileira;
+        private static int Assento1;
+        private static int Assento2;
+        private static int Assento3;
+        private static int Assento4;
+        private int Voo;
+        private DateTime DataEmbarq;
+        private string LocalEmbarq;
+        private string DE;
+        private string PARA;
+        private float Preco;
+
+        public Passagem(int assento1, int assento2, int assento3, int assento4 ,int numVoo, DateTime diaEmbarq, string embarq, string origem, string destino, float valor)
+        {
+            
+            Assento1 = assento1;
+            Assento2 = assento2;
+            Assento3 = assento3;
+            Assento4 = assento4;
+            Voo = numVoo;
+            DataEmbarq = diaEmbarq;
+            LocalEmbarq = embarq;
+            DE = origem;
+            PARA = destino;
+            Preco = valor;
+        }
+        public Passagem() 
+        {
+            Fileira = "A,B,C,D,E";
+           
+        }
+        public string fila()
+        {
+            return Fileira;
+        }    
+
+        public void setassento1(int assento1)
+        {
+            Assento1 = assento1;
+        }
+        public int getassento1()
+        {
+            return Assento1;
+        }
+        public void setassento2(int assento2)
+        {
+            Assento2 = assento2;
+        }
+        public int getassento2()
+        {
+            return Assento2;
+        }
+        public void setassento3(int assento3)
+        {
+            Assento1 = assento3;
+        }
+        public int getassento3()
+        {
+            return Assento3;
+        }
+        public void setassento4(int assento4)
+        {
+            Assento1 = assento4;
+        }
+        public int getassento4()
+        {
+            return Assento4;
+        }
+       
+        public void setnumVoo(int numVoo)
+        {
+            Voo = numVoo;
+        }
+        public int getnumVoo()
+        {
+            return Voo;
+        }
+        public void setdiaEmbarq(DateTime diaEmbarq)
+        {
+            DataEmbarq = diaEmbarq;
+        }
+        public DateTime getdiaEmbarq()
+        {
+            return DataEmbarq;
+        }
+        public void setembarq(string embarq)
+        {
+            LocalEmbarq = embarq;
+        }
+        public string getembarq()
+        {
+            return LocalEmbarq;
+        }
+        public void setorigem(string origem)
+        {
+            DE = origem;
+        }
+        public string getorigem()
+        {
+            return DE;
+        }
+        public void setdestino(string destino)
+        {
+            PARA = destino;
+        }
+        public string getdestino()
+        {
+            return PARA;
+        }
+        public void setvalor(float valor)
+        {
+            Preco = valor;
+        }
+        public float getvalor()
+        {
+            return Preco;
+        }
+    }
+    class Projetor1 : Passagem
+    {
+        private string Cor;
+        private int Voo;
+        
+        public Projetor1()
+        {
+            Cor = "Azul";
+        }
+        public string cor()
+        {
+            return Cor;
+        }
+        //public Projetor1(int voo)
+        //{
+            
+        //    Voo = voo;
+           
+        //}
+        
+        public void setVoo(int voo)
+        {
+           Voo = voo;
+        }
+        public int getVoo()
+        {
+            return Voo;
+        }      
+    }
+     class Projetor2:Passagem
+    {     
+        private string Cor;
+        private int Voo;
+
+        public Projetor2()
+        {
+            Cor = "Verde";
+        }
+        public string cor()
+        {
+            return Cor;
+        }
+        //public Projetor2(int voo)
+        //{
+
+        //    Voo = voo;
+
+        //}
+
+        public void setVoo(int voo)
+        {
+            Voo = voo;
+        }
+        public int getVoo()
+        {
+            return Voo;
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Passagem painel = new Passagem();
+            painel.fila();
+           // bilhete.setNome("Enivaldo");
+            painel.setnumVoo(243);
+            painel.setassento1(25);
+            painel.setassento2(19);
+            //painel.setassento3(3);
+            //painel.setassento4(12);
+
+            Console.WriteLine("Embarque Voo " + painel.getnumVoo() + " , " + painel.fila() + " , " + painel.getassento1() + " , " + painel.getassento2());
+
+            Projetor1 num1 = new Projetor1();
+            num1.cor();
+            num1.fila();
+            num1.getassento1();
+            //num1.getnumVoo();
+
+            Projetor2 num2 = new Projetor2();
+            num2.cor();
+            num2.fila();
+            num2.getassento2();
+            //num2.getnumVoo();
+
+            Console.WriteLine(num1.fila()+" " + num1.cor()+ " " + num1.getassento1());  
+            Console.WriteLine(num2.fila() + " " + num2.cor() + " " + num2.getassento2());
+         
+       
+       }
+    }
+    
